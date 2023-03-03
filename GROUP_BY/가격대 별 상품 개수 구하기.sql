@@ -1,0 +1,10 @@
+-- TRUNC(NMB, 1)는 소수점을 반올림하지 않고 절사
+-- TRUNC(NMB,-1)는 주로 금액 계산 시 1원 단위를 절사
+SELECT 
+    TRUNC(PRICE, -4) AS PRICE_GROUP, COUNT(*)AS PRODUCTS
+FROM 
+    PRODUCT 
+GROUP BY 
+    TRUNC(PRICE, -4)
+ORDER BY 
+    PRICE_GROUP;
